@@ -17,15 +17,14 @@ export default class House{
                 this.imgUrl
               }" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">${this.bedrooms} - ${this.bathrooms} - ${
+                <h5 class="card-title">Bedrooms: ${this.bedrooms} - Bath: ${this.bathrooms} - Year: ${
       this.year
-    }- ${this.levels}</h5>
+    }-Levels: ${this.levels}</h5>
                 <p class="card-text">${this.description} <b>$${
       this.price
     }</b></p>
                 <button class="btn btn-info" onclick="app.houseController.bid('${
-                  this._id
-                }', ${this.price + 5})">BID $5</button>
+                  this._id}', ${this.price + 5})">BID $5</button>
                 <button class="btn btn-danger" onclick="app.houseController.delete('${
                   this._id
                 }')">DELETE</button>

@@ -38,7 +38,10 @@ class HouseService{
     editHouse(id, update){
       _api.put(id, update).then(res =>{
         let house = store.State.houses.find(h => h._id == id);
-        house = {...house, ...update};
+        // house = {...house, ...update};
+        for (let prop in update) {
+          house[prop] = update[prop];
+        }
         store.commit("houses", store.State.houses);
         
       }) .catch(error => {
@@ -48,7 +51,7 @@ class HouseService{
       
     }
 
-    
+
     deleteHouse(id){
       _api.delete(id).then(() =>{
         let houses = store.State.houses.filter(h => h._id !=id);
