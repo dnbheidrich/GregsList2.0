@@ -38,6 +38,7 @@ class HouseService{
     editHouse(id, update){
       _api.put(id, update).then(res =>{
         let house = store.State.houses.find(h => h._id == id);
+        // couldnt get spread op to work for me
         // house = {...house, ...update};
         for (let prop in update) {
           house[prop] = update[prop];
