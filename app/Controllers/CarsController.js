@@ -36,7 +36,7 @@ export default class CarsController {
       model: formData.model.value,
       year: formData.year.value,
       price: formData.price.value,
-      imgUrl: formData.imgUrl.value,
+      imgUrl: formData.imgURL.value,
       description: formData.description.value
     };
     console.log(newCar);
